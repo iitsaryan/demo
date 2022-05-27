@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card2">
+                
+                <div class="input-group">
+                    <input required="" type="text" name="text" autocomplete="off" class="input">
+                    <label class="user-label">UserName/email</label>
+                    <input required="" type="text" name="text" autocomplete="off" class="input2">
+                    <label class="user-label2">Password</label>
+                </div>
+                <div class="login-button">
+                    <button >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> login
+                    </button>
+                </div>
+                
+                <p> &nbsp &nbsp &nbsp &nbsp &nbsp  or <br> sign in with</p> <!-- '&nbsp' adds extra space in text -->
+
+                <div class="social-buttons">
+                    <a class="btn" id="login">Google</a>
+                    <a class="btn2"  id="anonymous">Anonymous</a>
+                    <a class="hidden" id="anonymouslogout"></a>
+                </div>
+              
+                <a class ="signup"href="#">Sign up</a>    
+                 
+                <div class="type-js headline">
+                    <h1 class="text-js">SignIn, SignUp</h1>
+                </div>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./card1.js"></script>
+
+            </div>
+            
+        </div>
+    </div>
+ 
+
+</body>
+
+
+
+<!-- // firebase    -->
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+    import { getAuth, signInAnonymously,linkWithPopup, FacebookAuthProvider, GoogleAuthProvider,getRedirectResult, signInWithRedirect,signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAvA4q9TvMzptMQfHGkoMV5wW_Hs_vt8rc",
+      authDomain: "messenger-b68b3.firebaseapp.com",
+      projectId: "messenger-b68b3",
+      storageBucket: "messenger-b68b3.appspot.com",
+      messagingSenderId: "407926986787",
+      appId: "1:407926986787:web:5195b23720a7c1df79f996",
+      measurementId: "G-V5VXS28VLF"
+    };
+  
+    // Initialize Firebase 
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const googleprovider = new GoogleAuthProvider(app);
+    const facebookProvider = new  FacebookAuthProvider(app);
+ 
+    
+    const auth = getAuth(app);
+    auth.languageCode = 'it';
+    
+
+   login.addEventListener('click',(e) => {
+    signInWithPopup(auth, googleprovider)
+          .then((result) => {
+           // This gives you a Google Access Token. You can use it to access Google APIs.
+           const credential = GoogleAuthProvider.credentialFromResult(result);
+          
+
+           const token = credential.accessToken;
+         
+           // The signed-in user info.
+        //    const user = result.user;
+           
+           window.location = '/dist/index.html';
+//..............................................//
+            // alert(user.displayName);
+
+
+         }).catch((error) => {
+           // Handle Errors here.
+           const errorCode = error.code;
+           const errorMessage = error.message;
+           // The email of the user's account used.
+           const email = error.email;
+           // The AuthCredential type that was used.
+           const credential = GoogleAuthProvider.credentialFromError(error);
+           // ...
+           if (errorCode === 'auth/account-exists-with-different-credential') {
+        alert("You have already signed up with a different auth provider for that email.");
+        // If you are using multiple auth providers on your app you should handle linking
+        // the user's accounts here.
+      }
+      else if (errorCode === 'auth/auth-domain-config-required') {
+          alert("An auth domain configuration is required"); 
+      }
+      else if (errorCode === 'auth/cancelled-popup-request') {
+          alert("Popup Google sign in was canceled");
+      }
+      else if (errorCode === 'auth/operation-not-allowed') {
+          alert("Operation is not allowed");
+      }
+      else if (errorCode === 'auth/operation-not-supported-in-this-environment') {
+          alert("Operation is not supported in this environment");
+      }
+      else if (errorCode === 'auth/popup-blocked') {
+          alert("Sign in popup got blocked");
+      }
+      else if (errorCode === 'auth/popup-closed-by-user') {
+          alert("Google sign in popup got cancelled");
+      }
+      else if (errorCode === 'auth/unauthorized-domain') {
+          alert("Unauthorized domain");
+      }
+       else {
+        console.error(error);
+      }
+      // [END_EXCLUDE]
+    });
+    
+  });
+   
+//    facebook.addEventListener('click',(e) => {
+//     signInWithPopup(auth, facebookprovider)
+//          .then((result) => {
+//           // This gives you a F acebook Access Token. You can use it to access facebook APIs.
+//            // The signed-in user info.
+//         const user = result.user;
+        
+//         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+//         const credential = FacebookAuthProvider.credentialFromResult(result);
+//         const accessToken = credential.accessToken;
+        
+//         // ...
+//         })
+//         .catch((error) => {
+//         // Handle Errors here.
+//         const errorCode = error.code;
+//         const errorMessage = error.message;
+//         // The email of the user's account used.
+//         const email = error.email;
+//         // The AuthCredential type that was used.
+//         const credential = FacebookAuthProvider.credentialFromError(error);
+        
+//         // ...
+//         });
+//    });
+
+
+    
+    
+    anonymous.addEventListener('click', e =>{
+        signInAnonymously(auth)
+            .then(() => {
+
+
+                // window.location = '/dist/index.html';
+              // Signed in..
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // ...
+            });
+    
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              // User is signed in, see docs for a list of available properties
+              // https://firebase.google.com/docs/reference/js/firebase.User
+              const uid = user.uid;
+              window.location = '/dist/index.html';
+              // ...
+            } else {
+              // User is signed out
+              // ...
+            }
+        });
+    });
+   
+
+
+</script>
+
+
+
+    
+
+</html>

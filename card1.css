@@ -1,0 +1,519 @@
+body{
+    background: #212121 ;
+    /* display: flex;
+    padding: 100px;
+    justify-content: center;  */
+    
+}
+
+.container {
+    display: flex;
+    margin-top: 120px;
+    
+    justify-content: center;
+}
+
+.card {
+
+    width: 300px;
+    height: 394px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 50px;
+    transition: all .3s;
+}
+   
+.card2 {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px; */
+    width: 300px;
+    height: 394px;
+    background-color: #1a1a1a;
+    border-radius:40px;
+    transition: all .2s;
+    
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.card2:hover {
+ transform: scale(0.98);
+ border-radius: 50px;
+}
+
+.card:hover {
+ box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+
+
+/* ====================Login Button==========================*/
+
+
+
+button {
+    position: relative;
+    padding: 1em 1.8em;
+    left: 50%;
+    margin: 180px 0 0 -55px;
+    outline: none;
+    border: 1px solid #303030;
+    background: #212121;
+    color: #ae00ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn,.btn2,
+button:hover {
+ box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+ transition-delay: 0.6s;
+}
+
+button span {
+ position: absolute;
+}
+
+button span:nth-child(1) {
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, #ae00ff);
+}
+
+button:hover span:nth-child(1) {
+ left: 100%;
+ transition: 0.7s;
+}
+
+button span:nth-child(3) {
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(3) {
+ right: 100%;
+ transition: 0.7s;
+ transition-delay: 0.35s;
+}
+
+button span:nth-child(2) {
+ top: -100%;
+ right: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, transparent, #ae00ff);
+}
+
+button:hover span:nth-child(2) {
+ top: 100%;
+ transition: 0.7s;
+ transition-delay: 0.17s;
+}
+
+button span:nth-child(4) {
+ bottom: -100%;
+ left: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(4) {
+ bottom: 100%;
+ transition: 0.7s;
+ transition-delay: 0.52s;
+}
+
+button:active {
+ background: #ae00af;
+ background: linear-gradient(to top right, #ae00af, #001eff);
+ color: #bfbfbf;
+ box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
+ transition: 0.1s;
+}
+
+button:active span:nth-child(1) 
+span:nth-child(2) 
+span:nth-child(2) 
+span:nth-child(2) {
+ transition: none;
+ transition-delay: none;
+}
+   
+
+/* ========================User Name================================ */
+
+.input-group {
+ position: relative;
+}
+
+.input {
+    position: absolute;
+    left: 50%;
+    margin: 43px 0 0 -105px;
+    border: 2px solid #303030;
+    border-radius: 20px;
+    background: #212121;
+    overflow: hidden;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.user-label {
+ position: absolute;
+ left: 50px;
+ text-transform: uppercase;
+ font-size: 15px;
+ font-weight: bold;
+ letter-spacing: 2px;
+ margin: 40px 0 0 10px;
+ color: #ae00af;
+ pointer-events: none;
+ transform: translateY(1rem);
+ transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input:focus, input:valid {
+ outline: none;
+ border: 1.5px solid #ae00af;
+}
+
+.input:focus ~ label, input:valid ~ label {
+ transform: translateY(-50%) scale(0.8);
+ background-color: #212121;
+ padding: 0.2 em;
+ color: #2196f3;
+}
+
+
+
+.input2 {
+    position: absolute;
+    left: 50%;
+    margin: 110px 0 0 -105px;
+    border: 2px solid #303030;
+    border-radius: 20px;
+    background: #212121;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #fff;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.user-label2 {
+ position: absolute;
+ left: 50px;
+ text-transform: uppercase;
+ font-size: 15px;
+ font-weight: bold;
+ letter-spacing: 2px;
+ margin: 105px 0 0 10px;
+ color: #ae00af;
+ pointer-events: none;
+ transform: translateY(1rem);
+ transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+
+.input2:focus, input2:valid {
+ outline: none;
+ border: 1.5px solid #ae00af;
+}
+
+.input2:focus ~ label, input2:valid ~ label {
+ transform: translateY(-50%) scale(0.8);
+ background-color: #212121;
+ padding: 0.2 em;
+ color: #2196f3;
+}
+
+
+
+/* ===================Google Button =================*/
+
+.btn {
+    position: absolute;
+    appearance: none;
+    padding: 1em 1em;
+    left: 50%;
+    margin: 80px 0 0 -120px;
+    outline: none;
+    border: 0px solid #303030;
+    background: #212121;
+    color: #ae00ff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    --border-radius: 20px;
+    --border-width: 3px;
+    /* 
+    position: absolute;
+    left:50%;
+    border-radius: 20px;
+    margin: 280px 0 0 -110px;  
+    padding: 1em 2em;
+    border: 0;
+    text-decoration: none;
+    background-color: #212121;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2; */
+   }
+   
+   .btn:hover::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+           #488cfb,
+           #29dbbc,
+           #ddf505,
+           #ff9f0e,
+           #e440bb,
+           #655adc,
+           #488cfb
+       );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+   }
+   
+   .btn:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   .btn,
+   .btn:hover:after {
+    box-sizing: border-box;
+   }
+   
+   .btn:active {
+    --border-width: 5px;
+   }
+
+/*==========================Facebook button=====================*/
+
+
+
+.btn2 {
+    position: absolute;
+    appearance: none;
+    padding: 1em 1em;
+    left: 50%;
+    margin: 80px 0 0 0;
+    outline: none;
+    border: 0px solid #303030;
+    background: #212121;
+    color: #ae00ff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    --border-radius: 20px;
+    --border-width: 3px;
+    /* 
+    position: absolute;
+    left:50%;
+    border-radius: 20px;
+    margin: 280px 0 0 -110px;  
+    padding: 1em 2em;
+    border: 0;
+    text-decoration: none;
+    background-color: #212121;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2; */
+   }
+   
+   .btn2:hover::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+           #488cfb,
+           #29dbbc,
+           #ddf505,
+           #ff9f0e,
+           #e440bb,
+           #655adc,
+           #488cfb
+       );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+   }
+   
+   .btn2:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   .btn2,
+   .btn2:hover:after {
+    box-sizing: border-box;
+   }
+   
+   .btn2:active {
+    --border-width: 5px;
+   }
+
+
+
+p {
+    position:absolute;
+    cursor: default;
+    left: 50%;
+    margin: 15px 0 0 -40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ae00af;
+    text-transform: uppercase;
+} 
+
+.signup{
+    position: absolute;
+    left: 50%;
+    margin: 135px 0 0 -30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ae00af;
+    text-transform: uppercase;
+    
+}
+
+.signup:hover{
+  -webkit-animation: flash 0.5s none infinite alternate;
+  animation: flash 0.5s none infinite alternate;
+  
+
+  
+}
+
+
+/* ===============AUTO TYPING TEXT=================*/
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+.text-js {
+  opacity: 0;
+}
+
+.cursor {
+  display: block;
+  position:absolute;
+  height: 50%;
+  top: 10px;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: #ae00af;
+  z-index: 1;
+  -webkit-animation: flash 0.5s none infinite alternate;
+          animation: flash 0.5s none infinite alternate;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.headline {
+  
+  position: absolute;
+  top: -60%;
+  cursor: default;
+  left: 50%;
+  margin: 0 0 0 -70px;
+  color: #ae00af;
+  font-size: 10px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+
+
